@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <title>스케쥴 추천 결과</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f8f8f8;
+      background-color: #F8F8F8;
       padding: 50px;
       margin: 0;
     }
@@ -44,7 +44,7 @@
     }
     .card {
       flex: 0 0 calc(33.333% - 20px);
-      background: #f0f0f0;
+      background: #F0F0F0;
       padding: 15px;
       border-radius: 10px;
       box-sizing: border-box;
@@ -66,10 +66,13 @@
     <h2>스케쥴 추천 결과</h2>
     <div class="info">
       <p><strong>지역:</strong> {{ region }}</p>
+      <p><strong>성별:</strong> {{ gender }}</p>
       <p><strong>인원수:</strong> {{ people }}</p>
-      <p><strong>시작 시간:</strong> {{ start_time }}</p>
+      <p>
+        <strong>시작 시간:</strong> {{ start_time }}
+        <button onClick="window.location.reload()" style="float: right;padding: 5px 10px 5px 10px;border-radius : 5px;">새로고침</button>
+      </p>
     </div>
-
     {% for block in schedule %}
       <div class="section-title">{{ block.time }}시 추천 (카테고리: {{ block.category }})</div>
       <div class="grid">
